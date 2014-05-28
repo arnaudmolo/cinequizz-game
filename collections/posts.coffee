@@ -8,8 +8,6 @@ Posts.deny
   update: (userId, post, fieldNames) ->
     (_.without fieldNames, 'url', 'title').length > 0
 
-
-
 Meteor.methods
   post: (postAttributes) ->
     user = Meteor.user()
