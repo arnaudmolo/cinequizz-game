@@ -21,9 +21,15 @@ app.use do bodyParser.json
 app.use do bodyParser.urlencoded
 app.use do cookieParser
 app.use require("node-compass") mode: "expanded"
-app.use express.static path.join __dirname, "public"
 app.use "/", routes
 app.use "/users", users
+
+#/ Static files
+app.use () ->
+    console.log @req, res
+
+app.use express.static path.join __dirname, "public"
+app.use '/views', express.static path.join __dirname + '/views'
 
 #/ catch 404 and forward to error handler
 app.use (req, res, next) ->
