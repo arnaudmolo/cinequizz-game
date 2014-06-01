@@ -12,5 +12,3 @@ describe 'Rooms', ->
 
     Room.countAll().then (res) ->
       res.should.beEqual 5
-    
-    
