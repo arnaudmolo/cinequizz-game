@@ -18,7 +18,8 @@
     "node-compass": "0.2.3",
     "express3-handlebars": "^0.5.0",
     "request": "^2.36.0",
-    "mongoose": "^3.8.12"
+    "mongoose": "^3.8.12",
+    "socket.io": "^1.0.3"
   },
   "devDependencies": {
     "should": "^4.0.0",

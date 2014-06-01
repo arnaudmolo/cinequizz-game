@@ -4,11 +4,11 @@ mongooseModel = mongoose.model 'Room'
 
 class Room extends mongooseModel
   constructor: (categorie) ->
-
-    mongooseModel.findOne().exec (err, res) =>
-      console.log res
+    mongooseModel.findOne
+      categorie: categorie
+    .exec (err, res) =>
       unless res
-        super 
+        super
           categorie: categorie
         console.log @
         @save () ->
