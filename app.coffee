@@ -8,6 +8,7 @@ routes = require("./routes/index")
 users = require("./routes/users")
 app = express()
 exphbs  = require('express3-handlebars')
+mongoose = require 'mongoose'
 
 # view engine setup
 app.set "views", path.join __dirname, "views"
@@ -62,5 +63,8 @@ app.use (err, req, res, next) ->
     error: {}
 
   return
+
+# Connect to the database
+do require './config/schemas'
 
 module.exports = app
