@@ -1,14 +1,14 @@
+Room = require './../../app/models/room.coffee'
+
 describe 'Rooms', ->
 
-  it 'should create a room instance', (done) ->
+  it 'should create a room instance', () ->
+
     theRoom = new Room 'aventure'
-    theRoom.should.ne.an.instanceOf Room
+    theRoom.should.be.an.instanceOf Room
 
-  it 'should count the number of rooms created', (done) ->
+  it 'should set the first argument as categorie property', () ->
 
-    while i <= 5
-      i++
-      new Room ''
-
-    Room.countAll().then (res) ->
-      res.should.beEqual 5
+    theRoom = new Room 'aventure'
+    theRoom.should.be.an.instanceOf(Room).and.have.property 'categorie'
+    theRoom.categorie.should.equal 'aventure'
